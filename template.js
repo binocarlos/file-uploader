@@ -1,0 +1,1 @@
+module.exports = '<div class="dropzone file-uploader-container">\n	<div ng-show="model[fieldname]"><a style="cursor:pointer;" ng-href="{{ model[fieldname] }}" target="_blank"><small>{{ filename }}</small></a></div>\n	<div ng-hide="readonly" class="dz-message">Drag file here to upload</div>\n</div>';
