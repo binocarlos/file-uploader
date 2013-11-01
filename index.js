@@ -17,11 +17,10 @@ $digger.directive('fileUploader', function($http, $safeApply){
       $scope.uploadurl = $digger.config.diggerurl + '/reception/files/upload'
 
       if($scope.readonly){
-        console.log('-------------------------------------------');
-        console.log('-------------------------------------------');
-        console.log('READF ONLYT');
+        
       }
       else{
+
         var myDropzone = new Dropzone(elem.get(0), {
           url: $digger.config.diggerurl + '/reception/files/upload',
           maxFiles:1,
