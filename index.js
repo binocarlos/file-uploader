@@ -27,15 +27,15 @@ $digger.directive('fileUploader', function($http, $safeApply){
           uploadMultiple:false,
           addRemoveLinks:true,
           clickable:true,
-          headers:{
-            'x-container-id':$scope.container.diggerid(),
-            'x-warehouse':$scope.container.diggerwarehouse(),
-            'x-upload-id':$scope.uploadid
-          },
           init: function() {
+            this.on("sending", function(file, xhr, formdata){
+              formdata.append('containerid', $scope.container.diggerid());
+              formdata.append('warehouse', $scope.container.diggerwarehouse());
+            })
+
             this.on("success", function(file, responseText) {
               $safeApply($scope, function(){
-                $scope.model[$scope.fieldname] = $scope.fileurl = $digger.config.baseurl + '/reception/files' + responseText;
+                $scope.model[$scope.fieldname] = $scope.fileurl = $digger.config.diggerurl + '/reception/files' + responseText;
                 $scope.processfieldname();
               })
             });
