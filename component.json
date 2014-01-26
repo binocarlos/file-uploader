@@ -5,7 +5,8 @@
   "version": "0.0.1",
   "keywords": [],
   "dependencies": {
-    "enyo/dropzone": "*"
+    "enyo/dropzone": "*",
+    "diggerio/digger-utils-for-angular":"*"
   },
   "development": {},
   "license": "MIT",
