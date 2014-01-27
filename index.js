@@ -41,10 +41,7 @@ angular
 
               this.on("success", function(file, responseText) {
                 $safeApply($scope, function(){
-                  console.log('-------------------------------------------');
-                  console.log('-------------------------------------------');
-                  console.dir(responseText);
-                  $scope.model[$scope.fieldname] = $scope.file_url;
+                  $scope.model[$scope.fieldname] = responseText;
                   $scope.processfieldname();
                   if($attrs.autoname){
                     $scope.model.name = $scope.filename;
