@@ -43,6 +43,7 @@ angular
                 $safeApply($scope, function(){
                   $scope.model[$scope.fieldname] = responseText;
                   $scope.processfieldname();
+                  $scope.check_image_url();
                   if($attrs.autoname){
                     $scope.model.name = $scope.filename;
                   }
@@ -50,6 +51,14 @@ angular
               });
             }
           });
+        }
+
+        $scope.check_image_url = function(){
+          if(!$scope.model || !$scope.model[$scope.fieldname]){
+            return;
+          }
+          var url = $scope.model[$scope.fieldname];
+          $scope.is_image = url.match(/\.(png|gif|jpg)/);
         }
 
 
@@ -62,6 +71,7 @@ angular
         }
 
         $scope.processfieldname();
+        $scope.check_image_url();
       	
       }
     }
