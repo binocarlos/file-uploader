@@ -18,7 +18,7 @@ angular
         $scope.uploadid = $digger.littleid();
 
         var container_url = $scope.container.diggerwarehouse() + '/' + $scope.container.diggerid() + '/' + $scope.fieldname + '/' + $scope.uploadid;
-        var base_url = $attrs.url || $digger.config.diggerurl + '/reception/files';
+        var base_url = $scope.base_url = $attrs.url || $digger.config.diggerurl + '/reception/files';
 
         $scope.file_url = base_url + container_url;
 
