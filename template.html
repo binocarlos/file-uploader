@@ -1,8 +1,8 @@
 <div class="dropzone file-uploader-container">
 	<div ng-if="model[fieldname]">
-		<a style="cursor:pointer;" ng-href="{{ base_url + model[fieldname] }}" target="_blank"><small>{{ filename }}</small>
+		<a style="cursor:pointer;" ng-href="{{ base_url + model[fieldname] + '?nocdn=y' }}" target="_blank"><small>{{ filename }}</small>
 			<div ng-show="is_image">
-				<img height=100 ng-src="{{ base_url + model[fieldname] }}" />
+				<img height=100 ng-src="{{ base_url + model[fieldname] + '?nocdn=y' }}" />
 			</div>
 		</a>
 	</div>
