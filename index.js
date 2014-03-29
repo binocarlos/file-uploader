@@ -40,16 +40,24 @@ angular
               })
 
               this.on("success", function(file, responseText) {
-                $safeApply($scope, function(){
-                  $scope.model[$scope.fieldname] = responseText;
-                  $scope.processfieldname();
-                  $scope.check_image_url();
-                  if($attrs.autoname){
-                    $scope.model.name = $scope.filename;
-                  }
-                })
+                setTimeout(function(){
+                  $safeApply($scope, function(){
+                    $scope.model[$scope.fieldname] = responseText;
+                    $scope.processfieldname();
+                    $scope.check_image_url();
+                    if($attrs.autoname){
+                      $scope.model.name = $scope.filename;
+                    }
+                  })
+                },2000)
+                
               });
             }
+          });
+
+          myDropzone.on("complete", function(file) {
+
+            myDropzone.removeFile(file);
           });
         }
 
